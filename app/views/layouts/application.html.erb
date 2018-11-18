@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Producthunt</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Producthunt</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <% if flash[:notice]%>
-    <div class="alert alert-info"><%= flash[:notice]%></div>
-    <% end %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= yield %>
-  </body>
+<body>
+  <% if flash[:notice]%>
+  <div class="alert alert-info">
+    <%= flash[:notice]%>
+  </div>
+  <% end %>
+
+  <% if signed_in? %>
+  <div>Hola
+    <%= current_user.name %>
+  </div>
+  <% end %>
+
+  <%= yield %>
+</body>
+
 </html>
