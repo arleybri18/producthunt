@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+    before_action :private_access, except: [:index, :show]
+
     def index
         @products = Product.all
     end
@@ -47,5 +49,6 @@ class ProductsController < ApplicationController
     def product_params
     params.require(:product).permit(:name,:url,:description)
     end
+
     
 end
