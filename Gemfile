@@ -57,6 +57,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails', '>=2.3.0'
+gem 'bootstrap-sass'   #3.2.0
 gem 'bootstrap', '~> 4.1'
 gem 'autoprefixer-rails', '8.6.5'
 
@@ -64,3 +65,6 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+gem 'gravatar-ultimate'
+gem 'xmlrpc'

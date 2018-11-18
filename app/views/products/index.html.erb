@@ -1,45 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Productos</h1>
-      <div class="text-right">
+    <div class="col-sm-10 col-sm-offset-1">
 
-        <% if signed_in?%>
-        <div class="text-rigth">
-          <%= link_to "Publicar Producto", new_product_path, class: "btn btn-primary" %>
+      <div class="products">
+        <% @products.each do |product| %>
+        <div class="product clearfix">
+          <div class="product-details">
+            <span class="product-title"><%= link_to product.name, product %></span>
+            <span class="product-description"><%= product.description %></span>
+          </div>
         </div>
         <% end %>
       </div>
-      <table class="table">
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>URL</th>
-          <th>Descripción</th>
-        </tr>
-        <% @products.each do |product| %>
-        <tr>
-          <td>
-            <%= product.id %>
-          </td>
-          <td>
-            <%= link_to product.name, product %>
-          </td>
-          <td>
-            <%= product.url %>
-          </td>
-          <td>
-            <%= product.description %>
-          </td>
-          <td>
-            <% if signed_in? %>
-            <%= link_to "Editar", edit_product_path(product) %>
-            <%= link_to "Eliminar", product, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" } %>
-            <% end %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
     </div>
   </div>
 </div>
