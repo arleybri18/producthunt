@@ -4,7 +4,7 @@
       <h1>Productos</h1>
       <div class="text-right">
 
-        <% if signned_in?%>
+        <% if signed_in?%>
         <div class="text-rigth">
           <%= link_to "Publicar Producto", new_product_path, class: "btn btn-primary" %>
         </div>
@@ -30,9 +30,6 @@
           </td>
           <td>
             <%= product.description %>
-          </td>
-          <td>
-            <%= link_to "Editar", edit_product_path(product) %>
           </td>
           <td>
             <% if signed_in? %>
