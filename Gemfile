@@ -68,3 +68,4 @@ end
 
 gem 'gravatar-ultimate'
 gem 'xmlrpc'
+gem 'annotate'
