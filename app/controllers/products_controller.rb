@@ -6,13 +6,14 @@ class ProductsController < ApplicationController
     end
     
     def new
-        @product = Product.new        
+        @product = Product.new
     end
 
     def create
-        product = Product.new(product_params)
+        @product = Product.new(product_params)
+        @product.user = current_user
 
-        if product.save
+        if @product.save
             redirect_to products_path, notice: "El producto fue publicado con éxito"
         else
             render :new
