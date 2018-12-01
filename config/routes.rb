@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   # delete 'products/:id', to: 'products#destroy'
 
   #estas rutas se pueden cambiar por la sentencia
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
 
   #Se puede hacer lo siguente para restringir o permitir metodos segun corresponda
   #resources :products, only: [:index, :new]
