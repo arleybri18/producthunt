@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   #estas rutas se pueden cambiar por la sentencia
   resources :products do
+    resource :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
 
