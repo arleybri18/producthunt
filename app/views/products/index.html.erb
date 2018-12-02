@@ -18,6 +18,11 @@
             <%= product.votes.count %></span>
           <% end %>
           <% end %>
+          <% if product.image.attached? %>
+          <div class="product-img">
+            <%= image_tag product.image.variant(resize: '100x100') %>
+          </div>
+          <% end %>
           <div class="product-details">
             <span class="product-title">
               <%= link_to product.name, product %></span>

@@ -69,3 +69,6 @@ end
 gem 'gravatar-ultimate'
 gem 'xmlrpc'
 gem 'annotate'
+
+gem "image_processing", "~> 1.2"
+gem "mini_magick", "~> 4.8"
